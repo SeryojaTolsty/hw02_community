@@ -1,9 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404, render
+
+from .models import Group, Post
 
 # Create your views here.
-
-# Импортируем модель, чтобы обратиться к ней
-from .models import Post, Group
 
 
 def index(request):

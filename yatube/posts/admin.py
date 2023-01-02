@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Group, Post
 
-from .models import Post, Group
+# Register your models here.
 
 
 class PostAdmin(admin.ModelAdmin):
