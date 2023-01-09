@@ -2,16 +2,11 @@ from django.contrib import admin
 
 from .models import Group, Post
 
-# Register your models here.
-
 
 class PostAdmin(admin.ModelAdmin):
-    # Перечисление полей, отображаемых в админке
     list_display = ('pk', 'text', 'pub_date', 'author', 'group')
-    # Добавление интерфейса для поиска постов по тексту
     list_editable = ('group',)
     search_fields = ('text',)
-    # Добавление возможности фильтрации по дате
     list_filter = ('pub_date',)
     empty_value_display = '-пусто-'
 

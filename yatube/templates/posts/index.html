@@ -1,15 +1,16 @@
-{% extends 'base.html' %}{% block content %}
-
-<!-- класс py-5 создает отступы сверху и снизу блока -->
-<div class="container py-5">
-  <h1>Последние обновления на сайте</h1>
+{% extends 'base.html' %}
+{% block title %}
+  {{ index.title }}
+{% endblock %}
+{% block content %}
+  <h1>{{ index.title }}</h1>
   <article>
     {% for post in posts %}
     <ul>
       <li>Автор: {{ post.author.get_full_name }}</li>
       <li>Дата публикации: {{ post.pub_date|date:"d E Y" }}</li>
     </ul>
-    <p>{{ post.text }}</p>
+    <p>{{ post.text|linebreaksbr }}</p>
     <a href="">все записи группы</a>
     {% if not forloop.last %}
     <hr />
@@ -18,13 +19,5 @@
     {% endif %} {% endif %} {% endfor %}
   </article>
   <hr />
-  <!-- под последним постом нет линии -->
-</div>
 
-{% comment %} НАЙТИ ИНФО КАК ДОБАВЛЯТЬ ССЫЛКИ {% endcomment %}
-
-<!-- Использованы классы бустрапа: -->
-<!-- border-top: создаёт тонкую линию сверху блока -->
-<!-- text-center: выравнивает текстовые блоки внутри блока по центру -->
-<!-- py-3: контент внутри размещается с отступом сверху и снизу -->
 {% endblock %}
