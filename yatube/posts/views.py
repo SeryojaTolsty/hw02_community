@@ -2,8 +2,8 @@ from django.shortcuts import get_object_or_404, render
 
 from .models import Group, Post
 
-LIMIT_RANGE = 10
-LR = LIMIT_RANGE
+LR = 10
+# LR - LIMIT_RANGE (количество постов на странице)
 
 
 def index(request):
